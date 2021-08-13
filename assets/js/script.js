@@ -1,42 +1,70 @@
 //Create our document ready function to make sure nothing runs before we load the page.
-// $(document).ready(function () {
-//all code goes in here to make sure that the page is fullly loaded before it runs anything at all.
-var moment = moment();
-$("#currentDay").text(moment.format("dddd MMM Do, YYYY"));
+$(document).ready(function () {
+  //all code goes in here to make sure that the page is fullly loaded before it runs anything at all.
+  var currentDay = moment().format("dddd MMM Do, YYYY");
+  $("#currentDay").text(currentDay);
+  var saveBtn = $(".saveBtn");
+  var textInput = $(".text-input");
+  var textBox9 = $("#plan-9");
+  var textBox10 = $("#plan-10");
+  var textBox11 = $("#plan-11");
+  var textBox12 = $("#plan-12");
+  var textBox1 = $("#plan-1");
+  var textBox2 = $("#plan-2");
+  var textBox3 = $("#plan-3");
+  var textBox4 = $("#plan-4");
+  var textBox5 = $("#plan-5");
 
-//listen for click events on the page
-// onClick function()
-//on click event gets fired grab the saved event options
-//save user inputs and time to a variable
-//after values are grabbed save to localStorage
+  //I want to be able to click the button
+  //and save the input text within the row of said button
+  //to local storage for that row
 
-//display alert to user that items have been saved to localStorage
+  saveBtn.click(saveText);
 
-//create some kind of timeout value that removes the notification
+  function saveText() {
+    event.preventDefault();
+    saveText = textInput.value;
+    localStorage.setItem("Text", saveText);
+  }
 
-//function to update time
+  var textTimeBlock = [
+    { textField: textBox9, timeBlock: 9 },
+    { textField: textBox10, timeBlock: 10 },
+    { textField: textBox11, timeBlock: 11 },
+    { textField: textBox12, timeBlock: 12 },
+    { textField: textBox1, timeBlock: 13 },
+    { textField: textBox2, timeBlock: 14 },
+    { textField: textBox3, timeBlock: 15 },
+    { textField: textBox4, timeBlock: 16 },
+    { textField: textBox5, timeBlock: 17 },
+  ];
 
-function currentTime() {
-  // get the current time
-  var currentTime = moment.format("H");
-  console.log(currentTime);
-}
+  function currentTime() {
+    // get the current time
+    var currentTime = moment().format("H");
+    //set the current time to an int for math comparison
+    currentTime = parseInt(currentTime);
+    //for loop to loop through textTimeBlock
+    for (var i = 0; i < textTimeBlock.length; i++) {
+      //if currentTime is === timblock number add class present
+      if (currentTime === textTimeBlock[i].timeBlock) {
+        textTimeBlock[i].textField.addClass("present");
+      } else if (currentTime > textTimeBlock[i].timeBlock) {
+        textTimeBlock[i].textField.removeClass("present");
+        textTimeBlock[i].textField.removeClass("future");
+        textTimeBlock[i].textField.addClass("past");
+      } else {
+        textTimeBlock[i].textField.removeClass("present");
+        textTimeBlock[i].textField.removeClass("past");
+        textTimeBlock[i].textField.addClass("future");
+      }
+    }
+  }
+  currentTime();
 
-currentTime();
-// create loop to go over all the time blocks
-//apply them to the correct - id
-//if else if statement
+  // retrieve localStorage and render items to the correct row
 
-//check to see if we have passed our time
-// check out removeClass and addClass
-
-//check to see if current hour matches physical time
-
-//check to see if time is future
-
-// retrieve localStorage and render items to the correct row
-
-/* DONT WASTE TIME GOING DOWN THE HOLE
+  /* DONT WASTE TIME GOING DOWN THE HOLE
 _¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶
 _¶¶___________________________________¶¶
 _¶¶___________________________________¶¶
@@ -69,4 +97,4 @@ __¶¶_______________¶¶¶________________¶_
 __¶¶_¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶_¶¶
 __¶¶_¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶_¶¶
 __¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶ */
-// });
+});
