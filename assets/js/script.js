@@ -1,13 +1,13 @@
 //Create our document ready function to make sure nothing runs before we load the page.
-// $(document).ready(function() {
+// $(document).ready(function () {
 //all code goes in here to make sure that the page is fullly loaded before it runs anything at all.
+var moment = moment();
+$("#currentDay").text(moment.format("dddd MMM Do, YYYY"));
 
 //listen for click events on the page
 // onClick function()
 //on click event gets fired grab the saved event options
 //save user inputs and time to a variable
-var time = "";
-var input = "";
 //after values are grabbed save to localStorage
 
 //display alert to user that items have been saved to localStorage
@@ -15,12 +15,18 @@ var input = "";
 //create some kind of timeout value that removes the notification
 
 //function to update time
-// get the current time with moment
 
+function currentTime() {
+  // get the current time
+  var currentTime = moment.format("H");
+  console.log(currentTime);
+}
+
+currentTime();
 // create loop to go over all the time blocks
 //apply them to the correct - id
-
 //if else if statement
+
 //check to see if we have passed our time
 // check out removeClass and addClass
 
@@ -63,5 +69,4 @@ __¶¶_______________¶¶¶________________¶_
 __¶¶_¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶_¶¶
 __¶¶_¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶_¶¶
 __¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶ */
-
-// }
+// });

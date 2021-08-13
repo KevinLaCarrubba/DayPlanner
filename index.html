@@ -28,63 +28,120 @@
       <p class="lead">A simple calendar app for scheduling your work day</p>
       <p id="currentDay" class="lead"></p>
     </header>
-    <section class="text-center notification" id="notify"></section>
+    <section class="text-center notification" id="notify">
+      "Appointment added to <code>localStorage</code>
+    </section>
     <div class="container">
       <!-- Timeblocks go here -->
-      <!-- Row 1 -->
-      <div id="time-9" class="row time-block">
-        <div class="col-1 hour"><p>9</p></div>
-        <div class="col-10" id="info-9"><p>Event info</p></div>
-        <div class="col-1 saveBtn"><p>submit button</p></div>
+      <!-- 9:00 -->
+      <div id="time-9" class="row force-height time-block">
+        <div class="col-12 col-md-1 col-lg-1 hour">9AM</div>
+        <textarea
+          name=""
+          id="plan-9"
+          cols="30"
+          rows="10"
+          class="col-12 col-md-10 col-lg-10"
+        ></textarea>
+        <button class="col-12 col-md-1 col-lg-1 saveBtn">Submit</button>
       </div>
-      <!-- Row 2 -->
-      <div id="time-10" class="row time-block">
-        <div class="col-1 hour">10</div>
-        <div class="col-10" id="info-10"></div>
-        <div class="col-1 saveBtn"></div>
+      <!-- 10:00 -->
+      <div id="time-10" class="row force-height time-block">
+        <div class="col-12 col-md-1 col-lg-1 hour">10AM</div>
+        <textarea
+          name=""
+          id="plan-10"
+          cols="30"
+          rows="10"
+          class="col-12 col-md-10 col-lg-10"
+        ></textarea>
+        <button class="col-12 col-md-1 col-lg-1 saveBtn">Submit</button>
       </div>
-      <!-- Row 3 -->
-      <div id="time-11" class="row time-block">
-        <div class="col-1 hour">11</div>
-        <div class="col-10" id="info-11"></div>
-        <div class="col-1 saveBtn"></div>
+      <!-- 11:00 -->
+      <div id="time-11" class="row force-height time-block">
+        <div class="col-12 col-md-1 col-lg-1 hour">11AM</div>
+        <textarea
+          name=""
+          id="plan-11"
+          cols="30"
+          rows="10"
+          class="col-12 col-md-10 col-lg-10"
+        ></textarea>
+        <button class="col-12 col-md-1 col-lg-1 saveBtn">Submit</button>
       </div>
-      <!-- Row 4 -->
-      <div id="time-12" class="row time-block">
-        <div class="col-1 hour">12</div>
-        <div class="col-10" id="info-12"></div>
-        <div class="col-1 saveBtn"></div>
+      <!-- 12:00 -->
+      <div id="time-12" class="row force-height time-block">
+        <div class="col-12 col-md-1 col-lg-1 hour">12PM</div>
+        <textarea
+          name=""
+          id="plan-12"
+          cols="30"
+          rows="10"
+          class="col-12 col-md-10 col-lg-10"
+        ></textarea>
+        <button class="col-12 col-md-1 col-lg-1 saveBtn">Submit</button>
       </div>
-      <!-- Row 5 -->
-      <div id="time-13" class="row time-block">
-        <div class="col-1 hour">1</div>
-        <div class="col-10" id="info-1"></div>
-        <div class="col-1 saveBtn"></div>
+      <!-- 1:00 -->
+      <div id="time-13" class="row force-height time-block">
+        <div class="col-12 col-md-1 col-lg-1 hour">1PM</div>
+        <textarea
+          name=""
+          id="plan-1"
+          cols="30"
+          rows="10"
+          class="col-12 col-md-10 col-lg-10"
+        ></textarea>
+        <button class="col-12 col-md-1 col-lg-1 saveBtn">Submit</button>
       </div>
-      <!-- Row 6 -->
-      <div id="time-14" class="row time-block">
-        <div class="col-1 hour">2</div>
-        <div class="col-10" id="info-2"></div>
-        <div class="col-1 saveBtn"></div>
+      <!-- 2:00-->
+      <div id="time-14" class="row force-height time-block">
+        <div class="col-12 col-md-1 col-lg-1 hour">2PM</div>
+        <textarea
+          name=""
+          id="plan-2"
+          cols="30"
+          rows="10"
+          class="col-12 col-md-10 col-lg-10"
+        ></textarea>
+        <button class="col-12 col-md-1 col-lg-1 saveBtn">Submit</button>
       </div>
-      <!-- Row 7 -->
-      <div id="time-15" class="row time-block">
-        <div class="col-1 hour">3</div>
-        <div class="col-10" id="info-3"></div>
-        <div class="col-1 saveBtn"></div>
+      <!-- 3:00 -->
+      <div id="time-15" class="row force-height time-block">
+        <div class="col-12 col-md-1 col-lg-1 hour">3PM</div>
+        <textarea
+          name=""
+          id="plan-3"
+          cols="30"
+          rows="10"
+          class="col-12 col-md-10 col-lg-10"
+        ></textarea>
+        <button class="col-12 col-md-1 col-lg-1 saveBtn">Submit</button>
       </div>
-      <!-- Row 8 -->
-      <div id="time-16" class="row time-block">
-        <div class="col-1 hour">4</div>
-        <div class="col-10" id="info-4"></div>
-        <div class="col-1 saveBtn"></div>
+      <!-- 4:00 -->
+      <div id="time-16" class="row force-height time-block">
+        <div class="col-12 col-md-1 col-lg-1 hour">4PM</div>
+        <textarea
+          name=""
+          id="plan-4"
+          cols="30"
+          rows="10"
+          class="col-12 col-md-10 col-lg-10"
+        ></textarea>
+        <button class="col-12 col-md-1 col-lg-1 saveBtn">Submit</button>
       </div>
-      <!-- Row 9 -->
-      <div id="time-17" class="row time-block">
-        <div class="col-1 hour">5</div>
-        <div class="col-10" id="info-5"></div>
-        <div class="col-1 saveBtn"></div>
+      <!-- 5:00 -->
+      <div id="time-17" class="row force-height time-block">
+        <div class="col-12 col-md-1 col-lg-1 hour">5PM</div>
+        <textarea
+          name=""
+          id="plan-5"
+          cols="30"
+          rows="10"
+          class="col-12 col-md-10 col-lg-10"
+        ></textarea>
+        <button class="col-12 col-md-1 col-lg-1 saveBtn">Submit</button>
       </div>
+
       <!-- Container end -->
     </div>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
